@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var outputLabel: UILabel!
+    var defaultCount : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,33 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func addOneButton(sender: UIButton) {
+        defaultCount = defaultCount + 1
+        outputLabel.text = "\(defaultCount)"
+        
+        if (defaultCount < 0){
+            outputLabel.textColor = UIColor.redColor()
+        }else{
+            outputLabel.textColor = UIColor.grayColor()
+        }
+        
+    }
+    @IBAction func resetToZero(sender: UIButton) {
+        
+        defaultCount = 0
+        outputLabel.text = "\(defaultCount)"
+        outputLabel.textColor = UIColor.blackColor()
+        
+    }
 
+    @IBAction func minusOneButton(sender: UIButton) {
+        defaultCount = defaultCount - 1
+        outputLabel.text = "\(defaultCount)"
+        if (defaultCount < 0){
+            outputLabel.textColor = UIColor.redColor()
+        }else{
+            outputLabel.textColor = UIColor.grayColor()
+        }
+    }
 }
 
