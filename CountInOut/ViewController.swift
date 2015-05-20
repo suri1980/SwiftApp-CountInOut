@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 
     @IBAction func addOneButton(sender: UIButton) {
         defaultCount = defaultCount + 1
-        outputLabel.text = "\(defaultCount)"
+        outputLabel.text = String(defaultCount)
         
         if (defaultCount < 0){
             outputLabel.textColor = UIColor.redColor()
@@ -37,14 +37,14 @@ class ViewController: UIViewController {
     @IBAction func resetToZero(sender: UIButton) {
         
         defaultCount = 0
-        outputLabel.text = "\(defaultCount)"
+        outputLabel.text = String(defaultCount)
         outputLabel.textColor = UIColor.blackColor()
         
     }
 
     @IBAction func minusOneButton(sender: UIButton) {
         defaultCount = defaultCount - 1
-        outputLabel.text = "\(defaultCount)"
+        outputLabel.text = String(defaultCount)
         if (defaultCount < 0){
             outputLabel.textColor = UIColor.redColor()
         }else{
